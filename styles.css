@@ -1,0 +1,126 @@
+:root {
+  --ink: #1c1915;
+  --muted: #5c564c;
+  --line: #e4ddd2;
+  --paper: #faf7f2;
+  --card: #fffdf9;
+  --accent: #8c3d2f;
+  --accent-soft: #f3e6e1;
+  --max: 42rem;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI", "Source Sans 3", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+a { color: var(--accent); }
+
+a:hover { text-decoration-thickness: 2px; }
+
+.wrap {
+  width: min(calc(100% - 2.5rem), var(--max));
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 1px solid var(--line);
+  background: var(--card);
+}
+
+.bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 0;
+}
+
+.mark {
+  color: inherit;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+nav { display: flex; gap: 1.1rem; }
+
+nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
+
+nav a[aria-current="page"],
+nav a:hover { color: var(--ink); }
+
+main { padding: 2.5rem 0 4rem; }
+
+h1 {
+  margin: 0 0 0.6rem;
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+h2 {
+  margin: 2.2rem 0 0.5rem;
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h3 { margin: 1.4rem 0 0.3rem; font-size: 1.05rem; }
+
+.lede { font-size: 1.2rem; color: var(--ink); }
+
+.meta { color: var(--muted); font-size: 0.92rem; }
+
+.card {
+  margin: 1.5rem 0;
+  padding: 1rem 1.15rem;
+  background: var(--accent-soft);
+  border-radius: 10px;
+}
+
+.card strong { display: block; margin-bottom: 0.25rem; }
+
+ul, ol { padding-left: 1.2rem; }
+
+li { margin: 0.35rem 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.55rem 0.4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+th { color: var(--muted); font-weight: 600; }
+
+code {
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 0.9em;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.92rem;
+  padding: 1.4rem 0 2rem;
+}
+
+footer nav { margin-bottom: 0.4rem; }

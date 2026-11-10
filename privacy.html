@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy policy — CCV</title>
+  <meta name="description" content="How the CCV Windows app handles information on your PC, including Google account and Google Drive data used for optional file sync.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <a class="mark" href="index.html">CCV</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="privacy.html" aria-current="page">Privacy policy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <h1>Privacy policy</h1>
+    <p class="meta">Effective November 9, 2026</p>
+    <p>This policy describes CCV, a Windows desktop application, and the optional Google Drive connection offered in Settings. CCV does not operate an account service. The developer does not receive the contents of your resumes, your Google files, or your Google password.</p>
+    <p>Contact: <a href="mailto:REPLACE_WITH_YOUR_EMAIL">REPLACE_WITH_YOUR_EMAIL</a>.</p>
+
+    <h2>Information the app handles</h2>
+    <p>CCV stores what you put into it so it can build and track resumes. That information stays on the computer where you installed CCV unless a section below says otherwise.</p>
+    <table>
+      <thead>
+        <tr><th>Information</th><th>Where it lives</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Profile facts you enter, such as name, email, phone, location, work history, work authorization, and pay expectation</td>
+          <td>On this PC, under your Windows profile (<code>%APPDATA%\CCV</code>)</td>
+        </tr>
+        <tr>
+          <td>Job titles, employers, posting links, and job descriptions</td>
+          <td>On this PC, and in the export folder you choose</td>
+        </tr>
+        <tr>
+          <td>Generated resumes, prompts, and export files (<code>jd.txt</code>, resume PDF, <code>resume-info.json</code>, <code>resume-prompt.txt</code>)</td>
+          <td>The export folder you choose, and on this PC</td>
+        </tr>
+        <tr>
+          <td>Cookies and site sessions for pages you open in CCV’s browser</td>
+          <td>On this PC, in the app’s browser profile</td>
+        </tr>
+        <tr>
+          <td>API keys and OAuth client secrets you paste</td>
+          <td>On this PC, encrypted with Windows DPAPI for your Windows account</td>
+        </tr>
+        <tr>
+          <td>Google and Microsoft refresh tokens, if you connect Drive or OneDrive</td>
+          <td>On this PC, encrypted with Windows DPAPI</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Google user data</h2>
+    <p>Google sign-in is optional. If you connect Google Drive, CCV uses Google’s OAuth and requests only this scope:</p>
+    <p><code>https://www.googleapis.com/auth/drive.file</code></p>
+    <p>With that scope, CCV can see, create, and change files that CCV itself created in your Google Drive. It cannot browse the rest of your Drive. From that connection CCV accesses:</p>
+    <ul>
+      <li><strong>Account identity.</strong> Your Google account email address and display name, read from the Drive API, so the app can show which account is signed in.</li>
+      <li><strong>Files CCV created.</strong> Folders and files for the active profile’s export tree. A typical job folder contains the job description, the resume PDF, resume metadata, and the prompt used to write the resume. Those files can include your name, contact details, and employment history because that is what a resume contains.</li>
+      <li><strong>A refresh token.</strong> Google issues this so CCV can keep syncing after the access token expires. It is stored only on this PC, protected with Windows DPAPI. CCV does not receive or store your Google password.</li>
+    </ul>
+
+    <h3>How that Google data is used</h3>
+    <p>CCV uses it for the Drive feature shown in the app:</p>
+    <ul>
+      <li>Show the connected account in Settings.</li>
+      <li>Upload export files from this PC to your Google Drive when you choose Sync Up, or when automatic upload after a save is on.</li>
+      <li>Download those same files back to this PC when you choose Sync Down.</li>
+      <li>Skip files that have not changed, using size, modified time, and Drive’s file version.</li>
+    </ul>
+    <p>Sync copies new and changed files. It does not delete files on your PC or in Drive.</p>
+
+    <h3>Limited Use</h3>
+    <p>CCV’s use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+    <p>In particular:</p>
+    <ul>
+      <li>Google user data is used only to provide the Drive sync feature you turned on. It is not used for advertising.</li>
+      <li>Google user data is not sold.</li>
+      <li>Google user data is not sent to the CCV developer, and it is not read by the developer. Transfers are between CCV on your computer and Google, to perform the sync you requested.</li>
+      <li>Humans do not read this data. There is no support console that displays your Drive files.</li>
+      <li>CCV does not use Google user data to train machine-learning models, and it does not transfer that data to a model provider.</li>
+    </ul>
+
+    <h2>Other services you may connect</h2>
+    <p>These are separate from the Google OAuth client. Each one runs only if you configure it, and that provider’s own policy then applies to what you send them.</p>
+    <ul>
+      <li><strong>OpenRouter.</strong> If you add an OpenRouter API key, CCV sends job-description text and related prompts to OpenRouter using that key, so a model can clean a description or help with profile context. The key stays on this PC.</li>
+      <li><strong>Chat sites you sign into</strong> (such as ChatGPT, Claude, Gemini, DeepSeek, Qwen, or Grok). The resume prompt and job description are entered into the site in the built-in browser. That site receives them under your account with that site.</li>
+      <li><strong>OneDrive or Supabase.</strong> If you pick one of these instead of Google Drive, the same export files are copied to the account or project you configured.</li>
+      <li><strong>A proxy you set on a profile.</strong> Browser and, if you enable it, OpenRouter traffic then uses that proxy.</li>
+    </ul>
+    <p>Signing into Google inside the built-in browser (for example to use Gemini or a job site) is a normal browser session stored locally. It is not the Drive OAuth permission above, and it does not widen the <code>drive.file</code> scope.</p>
+
+    <h2>Sharing</h2>
+    <p>The developer does not sell personal information and does not share it with advertisers or data brokers. Information leaves your computer only in the cases in this policy: to Google when you use Drive sync, to another cloud provider you configured, to OpenRouter or a chat site when you use those features, or through a proxy you configured. Those transfers are made by the app on your PC so the feature can run. The developer does not sit in the middle of them.</p>
+
+    <h2>Retention and deletion</h2>
+    <ul>
+      <li><strong>Google connection.</strong> Sign out of Google Drive in Settings → Cloud. CCV deletes the stored refresh token and the saved account label from this PC. Files already uploaded remain in your Google Drive until you delete them there.</li>
+      <li><strong>Local app data.</strong> Uninstall CCV, then delete <code>%APPDATA%\CCV</code> to remove settings, encrypted keys, tokens, job lists, and saved browser sessions.</li>
+      <li><strong>Export folders.</strong> Resumes already written to the export folder you chose are left in place. Delete that folder yourself if you want those copies gone.</li>
+      <li><strong>Revoke Google access.</strong> You can also remove CCV at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. That stops new tokens. Delete <code>%APPDATA%\CCV</code> if a refresh token is still stored on the PC.</li>
+    </ul>
+
+    <h2>Security</h2>
+    <p>Secrets and refresh tokens are protected with Windows DPAPI, which ties them to your Windows user account on that machine. Drive access uses HTTPS to Google’s APIs. You should keep Windows sign-in to yourself; anyone who can use your Windows account can use the app and its saved sessions.</p>
+
+    <h2>Children</h2>
+    <p>CCV is a job-application tool for adults. It is not directed at children under 13, and it should not be used to store a child’s personal information.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the updated version will be posted on this page with a new effective date. When a change affects how Google user data is used, it will be described on this page before that use begins.</p>
+  </main>
+  <footer>
+    <div class="wrap">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="terms.html">Terms of service</a>
+      </nav>
+      <p>CCV · <a href="mailto:REPLACE_WITH_YOUR_EMAIL">REPLACE_WITH_YOUR_EMAIL</a></p>
+    </div>
+  </footer>
+</body>
+</html>

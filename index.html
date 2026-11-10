@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CCV — Windows resume builder</title>
+  <meta name="description" content="CCV is a Windows desktop app that builds tailored resumes from job postings. Optional Google Drive sync stores only the export files CCV creates.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <a class="mark" href="index.html">CCV</a>
+      <nav>
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <p class="meta">Windows desktop application</p>
+    <h1>CCV builds a resume from the job in front of you.</h1>
+    <p class="lede">CCV is a personal resume tool for Windows. You keep job postings, profile facts, and finished resumes on your own computer. Google sign-in is optional, and it is used only to copy those export files to your own Google Drive.</p>
+
+    <div class="card">
+      <strong>Google Drive access</strong>
+      When you connect Google Drive, CCV requests one permission: <code>https://www.googleapis.com/auth/drive.file</code>. That lets CCV create, read, and update files it created. It does not grant access to the rest of your Drive.
+    </div>
+
+    <h2>What you do with it</h2>
+    <ul>
+      <li>Open a job posting and keep the description with the application.</li>
+      <li>Generate a tailored resume from your profile and that description, then export a PDF.</li>
+      <li>Track which roles you have applied to, per profile, on this PC.</li>
+      <li>Optionally sync the export folder for the active profile to Google Drive, OneDrive, or Supabase.</li>
+    </ul>
+
+    <h2>What Google sign-in is for</h2>
+    <p>Drive sync copies the files CCV already wrote for a job: the job description (<code>jd.txt</code>), the resume PDF, <code>resume-info.json</code>, and <code>resume-prompt.txt</code>. CCV also reads the email address and display name of the Google account you sign in with, so Settings can show which account is connected.</p>
+    <p>There is no CCV account server. The app runs on your PC. Tokens stay on that PC. Files move between your disk and your Google Drive.</p>
+
+    <h2>Your data</h2>
+    <p>Profile details, resumes, and browser logins you save in CCV stay in the app’s local data unless you turn on a cloud provider or send a prompt to a service you configured, such as OpenRouter or a chat site you sign into. The <a href="privacy.html">privacy policy</a> lists each case. Use of the app is covered by the <a href="terms.html">terms of service</a>.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about CCV or this Google integration: <a href="mailto:REPLACE_WITH_YOUR_EMAIL">REPLACE_WITH_YOUR_EMAIL</a>.</p>
+  </main>
+  <footer>
+    <div class="wrap">
+      <nav>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="terms.html">Terms of service</a>
+      </nav>
+      <p>CCV is an independent app and is not affiliated with Google.</p>
+    </div>
+  </footer>
+</body>
+</html>
